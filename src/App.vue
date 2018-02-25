@@ -25,14 +25,14 @@ export default {
   data(){
     return{
       value2:true,
-      data:{
+      data:[{
         label: '一级',
         children: [
           {
             label:'二级1',
-            children:{
+            children:[{
               label:'三级0'
-            }
+            }]
           },
           {
             label:'二级2',
@@ -46,7 +46,7 @@ export default {
             ]
           }
         ]
-      }
+      }]
     }
   },
   methods:{

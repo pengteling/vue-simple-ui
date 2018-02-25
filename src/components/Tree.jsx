@@ -1,8 +1,13 @@
 export default {
   name: "uiTree",
+  data(){
+    return{
+      dragItem:[]
+    }
+  },
   props: {    
     value: {
-      type: Object
+      type: Array
     }
   },
   computed:{
@@ -10,14 +15,43 @@ export default {
   },
   render(){    
     return (
-      <div class="tree">
-        {this.value.label}
-        {this.value.childern ? <tree value={this.value.childern}></tree> :''}
-      </div>
+      <ul class="tree">
+        {this.value.map((item,i)=>{
+          return (            
+              <li>
+                <span>{item.label}</span>
+                {item.children? 
+                  <ui-tree value={item.children}></ui-tree>
+                  :
+                  ''
+                }
+              </li>         
+          )
+        })}        
+      </ul>
     )    
   },
   mounted(){
     //tree(this.value)
+  },
+  methods:{
+    // dragstart(item,e){      
+    //   e.stopPropagation()
+    //   console.log(item)
+    //   this.dragItem = item
+    // },
+    // dragover(e){
+    //   e.stopPropagation()
+    //   e.preventDefault()
+    // },
+    // drop(item,e){
+    //   e.stopPropagation()
+    //   e.preventDefault()
+    //   //e.stopPropagation()
+    //   console.log(item)
+    //   item.children = this.dragItem
+    //   this.$emit('input',this.value)
+    // }
   }
 }
 

@@ -6,20 +6,47 @@
       inactive-color = "#ff4949"
       @change = "change"
     />
+    <ui-tree
+      v-model = "data"    
+    />      
+    
   </div>
 </template>
 <script>
-// import {uiSwitch} from './ui.js'
-import {uiSwitch} from './../dist/simpleUI.js'
+import {uiSwitch,uiTree} from './ui.js'
+//import {uiSwitch,uiTree} from './../dist/simpleUI.js'
 //import uiSwitch from './components/Switch.vue'
 export default {
   name : "App",
   components:{
-    uiSwitch
+    uiSwitch,
+    uiTree
   },
   data(){
     return{
-      value2:true
+      value2:true,
+      data:{
+        label: '一级',
+        children: [
+          {
+            label:'二级1',
+            children:{
+              label:'三级0'
+            }
+          },
+          {
+            label:'二级2',
+            children:[
+              {
+                label:'三级1'
+              },
+              {
+                label:'三级2'
+              }
+            ]
+          }
+        ]
+      }
     }
   },
   methods:{

@@ -1,0 +1,14 @@
+.sj{
+  display: inline-block;  
+  margin-right: 10px;
+  border:6px solid #c0c4cc;
+  border-right:0;
+  border-color:transparent transparent transparent #c0c4cc;
+  transition: all .3s;  
+  &.open{
+    transform: rotate3d(0,0,1,90deg)
+  }
+}
+.tree{
+  cursor: pointer;
+}

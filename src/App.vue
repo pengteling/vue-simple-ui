@@ -6,9 +6,11 @@
       inactive-color = "#ff4949"
       @change = "change"
     />
-    <ui-tree
-      v-model = "data"    
-    />      
+    <ul>
+      <ui-tree
+        v-model = "data"    
+      />     
+    </ul> 
     
   </div>
 </template>
@@ -31,7 +33,12 @@ export default {
           {
             label:'二级1',
             children:[{
-              label:'三级0'
+              label:'三级0',
+              children:[
+                {
+                  label:'四级'
+                }
+              ]
             }]
           },
           {

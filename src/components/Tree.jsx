@@ -2,7 +2,8 @@ export default {
   name: "uiTree",
   data(){
     return{
-      dragItem:[]
+      dragItem:[],
+      isopen:false
     }
   },
   props: {    
@@ -15,26 +16,32 @@ export default {
   },
   render(){    
     return (
-      <ul class="tree">
+      <li>
         {this.value.map((item,i)=>{
           return (            
-              <li>
-                <span>{item.label}</span>
-                {item.children? 
+            <li> 
+                <span onClick={this.collapse} >{item.label}</span>
+                {item.children && this.isopen? 
+                <ul>
                   <ui-tree value={item.children}></ui-tree>
+                </ul>
                   :
                   ''
                 }
               </li>         
           )
         })}        
-      </ul>
+      </li>
     )    
   },
   mounted(){
     //tree(this.value)
   },
   methods:{
+    collapse(e){
+      e.stopPropagation()
+      this.isopen = !this.isopen
+    }
     // dragstart(item,e){      
     //   e.stopPropagation()
     //   console.log(item)

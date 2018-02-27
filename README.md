@@ -16,11 +16,12 @@ $ npm install vue-simple-ui --save
 />
 ```
 ```JS
-import {uiSwitch} from 'vue-simple-ui'
+import {uiSwitch, uiTree} from 'vue-simple-ui'
 export default {
   name : "App",
   components:{
-    uiSwitch
+    uiSwitch,
+    uiTree
   },
   data(){
     return{
@@ -83,3 +84,51 @@ const app = new Vue({
 
 
 #### 2. Tree
+无限级树，支持拖动改变层级
+```HTML
+<ui-tree
+  v-model = "data"    
+/>
+```
+```JS
+data() {
+    return {      
+      data: [
+        {
+          label: "一级",
+          children: [
+            {
+              label: "二级1",
+              children: [
+                {
+                  label: "三级0",
+                  children: [
+                    {
+                      label: "四级"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              label: "二级2",
+              children: [
+                {
+                  label: "三级1"
+                },
+                {
+                  label: "三级2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          label: "一级2",
+          children: [{ label: "二级N" }]
+        }
+      ]
+    }
+  }
+```
+

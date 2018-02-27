@@ -31,9 +31,9 @@ export default {
   //     this.collapse2()
   //   }
   // },
-  updated(){
-    console.log('treemenu update')
-  },
+  // updated(){
+  //   console.log('treemenu update')
+  // },
   render(){    
     return (
       <div class="tree" style={this.indent} onClick={this.collapse} >
@@ -61,10 +61,10 @@ export default {
     // this.$on('dragstart',(item)=>{
     //   console.log(item)
     // })
-    EventBus.$on('move',()=>{
-      console.log('捕获move')
-      this.isupdate = !this.isupdate
-    })
+    // EventBus.$on('move',()=>{
+    //   console.log('捕获move')
+    //   this.isupdate = !this.isupdate
+    // })
   },
   methods:{
     collapse(e){
@@ -79,7 +79,7 @@ export default {
       EventBus.$emit('dragstartfromtree',item)      
     },
     dragover(e){
-      //e.stopPropagation()
+      e.stopPropagation()
       e.preventDefault()
     },
     drop(item,e){

@@ -13,8 +13,8 @@
   </div>
 </template>
 <script>
-import { uiSwitch, uiTree } from "./ui.js";
-//import {uiSwitch,uiTree} from './../dist/simpleUI.js'
+// import { uiSwitch, uiTree } from "./ui.js";
+import {uiSwitch,uiTree} from './../dist/simpleUI.js'
 //import uiSwitch from './components/Switch.vue'
 export default {
   name: "App",
@@ -61,7 +61,7 @@ export default {
           children: [{ label: "二级N" }]
         }
       ]
-    };
+    }
   },
   methods: {
     change() {

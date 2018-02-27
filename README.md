@@ -39,6 +39,7 @@ export default {
 2. 直接用 &lt;script&gt; 引入
 
 ```
+<link rel="stylesheet" href="node_modules/vue-simple-ui/dist/simpleUI.css">
 <script src="node_modules/vue-simple-ui/dist/simpleUI.js"></script>
 <script>
 //全局注册
@@ -73,13 +74,16 @@ const app = new Vue({
 </script>
 ```
 **Attributes**
+
 |参数|说明|类型|默认值|
-|-|-|-|-|
+|---|---|---|---|
 |inactive-color|关闭时的背景色|string|#dcdfe6|
 |active-color|打开时的背景色|string|#dcdfe6|
+
 **Event**
+
 |事件名称|说明|回调参数|
-|-|-|-|
+|---|---|---|
 |change|switch状态发生变化时的回调函数||
 
 

@@ -143,7 +143,7 @@ else { //生产环境
         // new webpack.optimize.CommonsChunkPlugin({
         //     name:'runtime'
         // }),
-        new ExtractTextPlugin('style.css'),
+        new ExtractTextPlugin('simpleUI.css'),
         new webpack.LoaderOptionsPlugin({  //将.vue中的css 单独打包成Css文件
             test:/\.vue$/,  
             options: {  

@@ -30,8 +30,12 @@ export default {
       </div>
     )    
   },
+  updated(){
+    console.log('tree update')
+  },
   mounted(){
     //tree(this.value)
+    console.log(this.data === this.value)
     EventBus.$on('dragstartfromtree',(item)=>{
       this.dragItem = item
     })
@@ -69,6 +73,7 @@ export default {
             /* 增加数组 */
             if(item.children){
               item.children.push(from)
+              EventBus.$emit('move')  
             }else{
               //item.children=[]
               //   Object.defineProperty(item, "children", {
@@ -78,6 +83,14 @@ export default {
               //     configuration:true
               // });
               item.children =[from]
+              //item = Object.assign({},item,{children:from})
+              // this.data = 
+              //console.log(this.data)
+              //console.log(data)
+              //this.data.splice(0,0)
+              //console.log('move')
+              EventBus.$emit('move')              
+              
               // item.children.splice(0,0,from)
               //this.$set(this.data,'b',2)              
               //this.dragItem = null

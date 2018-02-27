@@ -3,7 +3,8 @@ export default {
   name: "treemenu",
   data(){
     return{      
-      isopen:false   
+      isopen:false   ,
+      isupdate:true
     }
   },
   props: {    
@@ -23,12 +24,15 @@ export default {
     }
     
   }, 
-  watch:{
-    'value'(){
-      console.log("value发生变化 ")
-      console.log(this.value.children && this.value.children.length > 0 ? true : false)
-      this.collapse2()
-    }
+  // watch:{
+  //   'value'(){
+  //     console.log("value发生变化 ")
+  //     console.log(this.value.children && this.value.children.length > 0 ? true : false)
+  //     this.collapse2()
+  //   }
+  // },
+  updated(){
+    console.log('treemenu update')
   },
   render(){    
     return (
@@ -57,6 +61,10 @@ export default {
     // this.$on('dragstart',(item)=>{
     //   console.log(item)
     // })
+    EventBus.$on('move',()=>{
+      console.log('捕获move')
+      this.isupdate = !this.isupdate
+    })
   },
   methods:{
     collapse(e){

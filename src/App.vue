@@ -3,7 +3,7 @@
     <ui-switch 
       v-model = "value2"
       active-color = "#13ce66"
-      inactive-color = "#ff4949"
+      inactive-color = "#ff4949"      
       @change = "change"
     />
     <ui-switch v-model= "value1"></ui-switch>
@@ -23,7 +23,7 @@ export default {
     uiTree
   },
   data() {
-    return {
+    return {     
       value1: false,
       value2: true,
       data: [

@@ -36,7 +36,7 @@ export default {
 }
 ```
 
-2. 直接用 &lt;script&gt; 引入
+2. 直接用 &lt;script&gt; 引入(详见Demo/index.html)
 
 ```
 <link rel="stylesheet" href="node_modules/vue-simple-ui/dist/simpleUI.css">

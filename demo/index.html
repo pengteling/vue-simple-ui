@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/vue"></script>
+  <script src="../dist/simpleUI.js"></script>
+  <link rel="stylesheet" href="../dist/simpleUI.css">
+  <title>DEMO</title>
+</head>
+
+<body>
+  <div id="app">
+    <ui-switch v-model="value2" @change="change" active-color="#13ce66"></ui-switch>
+    <ui-tree v-model="data"></ui-tree>
+  </div>
+  <script>
+    //Vue.component('ul-switch',simpleUI.uiSwitch)
+    const app = new Vue({
+      el: '#app',
+      components: {
+        'ui-switch': simpleUI.uiSwitch,
+        'ui-tree': simpleUI.uiTree
+      },
+      data() {
+        return {
+          value2: false,
+          data: [
+            {
+              label: "一级",
+              children: [
+                {
+                  label: "二级1",
+                  children: [
+                    {
+                      label: "三级0",
+                      children: [
+                        {
+                          label: "四级"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  label: "二级2",
+                  children: [
+                    {
+                      label: "三级1"
+                    },
+                    {
+                      label: "三级2"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              label: "一级2",
+              children: [{ label: "二级N" }]
+            }
+          ]
+        }
+      },
+      methods: {
+        change() {
+          console.log("change")
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
